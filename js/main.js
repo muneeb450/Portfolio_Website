@@ -183,7 +183,7 @@
 
   /* ===== Magnetic Buttons & Ripple ===== */
   function initMagneticButtons() {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isTouchDevice) return;
 
     document.querySelectorAll('.magnetic-btn').forEach(btn => {
       btn.addEventListener('mousemove', (e) => {
@@ -223,7 +223,7 @@
 
   /* ===== 3D Tilt Cards ===== */
   function initTiltCards() {
-    if (prefersReducedMotion || isTouchDevice) return;
+    if (prefersReducedMotion || isTouchDevice || window.innerWidth < 768) return;
 
     document.querySelectorAll('.tilt-card').forEach(card => {
       card.addEventListener('mousemove', (e) => {

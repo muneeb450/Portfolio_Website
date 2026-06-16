@@ -15,7 +15,7 @@
   const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
 
   renderer.setSize(window.innerWidth, window.innerHeight);
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, isSmall ? 1 : isMedium ? 1.5 : 2));
   renderer.domElement.style.cssText =
     'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;';
 
@@ -46,7 +46,9 @@
   }
 
   /* ===== 1. Star Field ===== */
-  const STAR_COUNT = 3500;
+  const isSmall = window.innerWidth < 480;
+  const isMedium = window.innerWidth < 768;
+  const STAR_COUNT = isSmall ? 800 : isMedium ? 1500 : 3500;
   const starGeo = new THREE.BufferGeometry();
   const starPos = new Float32Array(STAR_COUNT * 3);
   const starSizes = new Float32Array(STAR_COUNT);
@@ -144,8 +146,12 @@
     return mesh;
   }
 
-  const aurora1 = makeAurora(0x6c63ff, -4, -16);
-  const aurora2 = makeAurora(0x00d4aa, 5, -18);
+  if (!isSmall) {
+    var aurora1 = makeAurora(0x6c63ff, -4, -16);
+    var aurora2 = makeAurora(0x00d4aa, 5, -18);
+  } else {
+    var aurora1 = null, aurora2 = null;
+  }
 
   /* ===== 4. Holographic Grid ===== */
   const gridGroup = new THREE.Group();
@@ -275,7 +281,7 @@
   setInterval(fireShooter, 2000 + Math.random() * 3000);
 
   /* ===== 7. Foreground Particles ===== */
-  const fgCount = 50;
+  const fgCount = isSmall ? 15 : isMedium ? 25 : 50;
   const fgGeo = new THREE.BufferGeometry();
   const fgPos = new Float32Array(fgCount * 3);
   const fgData = [];
@@ -347,6 +353,7 @@
 
     // Aurora deformation
     [aurora1, aurora2].forEach((a) => {
+      if (!a) return;
       const pos = a.geometry.attributes.position;
       const arr = pos.array;
       const orig = a.userData.orig;
