@@ -918,6 +918,8 @@ body.cursor-active .cursor-glow {
 .hero-social {
   display: none;
   width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 /* ===== Magnetic Buttons ===== */
@@ -1935,6 +1937,7 @@ a.contact-card:hover {
   .hero-stats {
     gap: 10px;
     margin-top: 28px;
+    margin-bottom: 4px;
   }
 
   .hero-stats .stat-item {
@@ -2138,6 +2141,7 @@ a.contact-card:hover {
   .hero-stats {
     gap: 8px;
     margin-top: 20px;
+    margin-bottom: 4px;
   }
 
   .hero-stats .stat-item {
@@ -2466,6 +2470,7 @@ a.contact-card:hover {
   .hero-stats {
     gap: 6px;
     margin-top: 18px;
+    margin-bottom: 4px;
   }
 
   .hero-stats .stat-item {
@@ -2712,6 +2717,7 @@ a.contact-card:hover {
   .hero-stats {
     gap: 6px;
     margin-top: 16px;
+    margin-bottom: 4px;
   }
 
   .hero-stats .stat-item {
