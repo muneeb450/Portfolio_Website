@@ -44,6 +44,7 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--nav-height);
+  overflow-x: hidden;
 }
 
 body {
@@ -445,6 +446,7 @@ body.cursor-active .cursor-glow {
 .hero {
   min-height: 100dvh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -825,6 +827,7 @@ body.cursor-active .cursor-glow {
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
+  width: 100%;
 }
 
 .hero-stats .stat-item {
@@ -914,6 +917,7 @@ body.cursor-active .cursor-glow {
 /* ===== Hero Social (mobile row) ===== */
 .hero-social {
   display: none;
+  width: 100%;
 }
 
 /* ===== Magnetic Buttons ===== */
@@ -1779,6 +1783,42 @@ a.contact-card:hover {
   .hero-avatar span {
     font-size: 2.4rem;
   }
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .section-subtitle {
+    margin-bottom: 40px;
+  }
+
+  .skills-grid {
+    gap: 24px;
+  }
+
+  .skill-category {
+    padding: 24px;
+  }
+
+  .timeline-item {
+    margin-bottom: 28px;
+  }
+
+  .cert-grid {
+    gap: 16px;
+  }
+
+  .projects-grid {
+    gap: 20px;
+  }
+
+  .contact-grid {
+    gap: 16px;
+  }
+
+  .about-stats {
+    gap: 24px;
+  }
 }
 
 /* ===== Responsive: Tablet ===== */
@@ -1934,7 +1974,7 @@ a.contact-card:hover {
     gap: 14px;
   }
 
-  .stat-item {
+  .about-stats .stat-item {
     flex: 1 1 calc(50% - 14px);
     min-width: 130px;
     padding: 16px 20px;
@@ -2155,7 +2195,7 @@ a.contact-card:hover {
     gap: 10px;
   }
 
-  .stat-item {
+  .about-stats .stat-item {
     flex: 1 1 calc(50% - 10px);
     min-width: 110px;
     padding: 14px 16px;
@@ -2288,6 +2328,21 @@ a.contact-card:hover {
 
   .gradient-blob {
     opacity: 0.15;
+  }
+
+  .blob-1 {
+    width: 280px;
+    height: 280px;
+  }
+
+  .blob-2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .blob-3 {
+    width: 160px;
+    height: 160px;
   }
 
   .hero-scroll-indicator {
@@ -2528,6 +2583,21 @@ a.contact-card:hover {
     width: 40px;
     height: 40px;
     font-size: 0.9rem;
+  }
+
+  .blob-1 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .blob-2 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .blob-3 {
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -2800,6 +2870,21 @@ a.contact-card:hover {
     width: 36px;
     height: 36px;
     font-size: 0.8rem;
+  }
+
+  .blob-1 {
+    width: 150px;
+    height: 150px;
+  }
+
+  .blob-2 {
+    width: 100px;
+    height: 100px;
+  }
+
+  .blob-3 {
+    width: 80px;
+    height: 80px;
   }
 }
 
