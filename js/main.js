@@ -331,10 +331,10 @@
   gsap.to('.hero-reveal', {
     opacity: 1,
     y: 0,
-    duration: 0.8,
-    stagger: 0.12,
+    duration: 0.7,
+    stagger: 0.1,
     ease: 'power3.out',
-    delay: 0.2
+    delay: 0.15
   });
 
   /* Floating particles around hero heading */

@@ -677,6 +677,71 @@ body.cursor-active .cursor-glow {
   box-shadow: 0 0 30px rgba(108, 99, 255, 0.15);
 }
 
+/* Icon-only social buttons (desktop) */
+.hero-btn-ico {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+  border-radius: var(--radius-sm);
+  font-size: 1rem;
+  background: rgba(26, 26, 46, 0.7);
+  color: var(--text-primary);
+  border: 1px solid rgba(108, 99, 255, 0.3);
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color var(--transition), box-shadow var(--transition);
+}
+
+.hero-btn-ico:hover {
+  border-color: var(--accent);
+  background: rgba(26, 26, 46, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(108, 99, 255, 0.15);
+}
+
+/* Mobile social buttons (labeled) */
+.hero-btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: rgba(26, 26, 46, 0.7);
+  color: var(--text-primary);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  backdrop-filter: blur(12px);
+  transition: transform 0.2s ease, border-color var(--transition), box-shadow var(--transition);
+  cursor: pointer;
+  font-family: inherit;
+  min-height: 48px;
+}
+
+.hero-btn-social:hover {
+  border-color: var(--accent);
+  background: rgba(26, 26, 46, 0.9);
+  transform: translateY(-2px);
+  box-shadow: 0 0 25px rgba(108, 99, 255, 0.12);
+}
+
+.hero-btn-social .btn-content {
+  gap: 10px;
+}
+
+.hero-btn-social i {
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.social-label {
+  font-size: 0.85rem;
+}
+
 /* Hero Visual (Avatar side) */
 .hero-visual {
   flex-shrink: 0;
@@ -844,6 +909,11 @@ body.cursor-active .cursor-glow {
 @keyframes scroll-bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
   50% { transform: translateX(-50%) translateY(6px); }
+}
+
+/* ===== Hero Social (mobile row) ===== */
+.hero-social {
+  display: none;
 }
 
 /* ===== Magnetic Buttons ===== */
@@ -1747,87 +1817,108 @@ a.contact-card:hover {
     display: none;
   }
 
+  .hero {
+    padding: calc(var(--nav-height) + 20px) 20px 56px;
+  }
+
   .hero-inner {
     flex-direction: column-reverse;
-    gap: 28px;
+    gap: 24px;
     text-align: center;
   }
 
   .hero-content {
     text-align: center;
+    max-width: 100%;
   }
 
   .hero-cta {
     justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-btn-ico {
+    display: none;
+  }
+
+  .hero-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 24px;
   }
 
   .hero h1 {
-    font-size: clamp(1.6rem, 7vw, 2.2rem);
+    font-size: clamp(1.5rem, 6.5vw, 2rem);
+    margin-bottom: 10px;
   }
 
   .hero-title {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
   }
 
   .hero-location {
-    font-size: 0.85rem;
-    margin-bottom: 24px;
+    font-size: 0.82rem;
+    margin-bottom: 22px;
   }
 
   .hero-badge {
-    font-size: 0.75rem;
-    padding: 4px 14px;
+    font-size: 0.72rem;
+    padding: 4px 12px;
+    margin-bottom: 14px;
   }
 
   .hero-greeting {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     letter-spacing: 3px;
+    margin-bottom: 6px;
   }
 
   .hero-avatar-wrap {
-    width: 130px;
-    height: 130px;
+    width: 120px;
+    height: 120px;
   }
 
   .hero-avatar {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
 
   .hero-avatar span {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .hero-avatar-glow {
-    inset: -12px;
+    inset: -10px;
   }
 
   .hero-stats {
-    gap: 14px;
-    margin-top: 36px;
+    gap: 10px;
+    margin-top: 28px;
   }
 
   .hero-stats .stat-item {
-    flex: 1 1 calc(50% - 14px);
-    min-width: 110px;
-    padding: 12px 16px;
+    flex: 1 1 calc(50% - 10px);
+    min-width: auto;
+    padding: 14px 16px;
   }
 
   .hero-stats .stat-number {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .hero-stats .stat-label {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.8px;
   }
 
   .hero-scroll-indicator {
-    bottom: 20px;
+    bottom: 18px;
   }
 
   .hero-scroll-indicator span {
     width: 18px;
-    height: 28px;
+    height: 26px;
   }
 
   .skills-grid {
@@ -1917,23 +2008,32 @@ a.contact-card:hover {
   }
 
   .hero {
-    padding: calc(var(--nav-height) + 20px) 16px 60px;
+    padding: calc(var(--nav-height) + 16px) 16px 50px;
+  }
+
+  .hero-inner {
+    gap: 20px;
   }
 
   .hero h1 {
-    font-size: clamp(1.4rem, 6.5vw, 1.8rem);
-    margin-bottom: 12px;
+    font-size: clamp(1.3rem, 6vw, 1.7rem);
+    margin-bottom: 10px;
   }
 
   .hero-title {
-    font-size: 0.9rem;
-    min-height: 2em;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .hero-location {
+    font-size: 0.8rem;
+    margin-bottom: 20px;
   }
 
   .hero-cta {
     flex-direction: column;
     align-items: stretch;
-    gap: 10px;
+    gap: 8px;
   }
 
   .hero-btn {
@@ -1941,20 +2041,37 @@ a.contact-card:hover {
     padding: 12px 20px;
     font-size: 0.85rem;
     min-height: 44px;
+    width: 100%;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-secondary {
+    width: 100%;
+  }
+
+  .hero-social {
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .hero-btn-social {
+    padding: 12px 16px;
+    font-size: 0.82rem;
+    min-height: 44px;
   }
 
   .hero-avatar-wrap {
-    width: 110px;
-    height: 110px;
+    width: 100px;
+    height: 100px;
   }
 
   .hero-avatar {
-    width: 90px;
-    height: 90px;
+    width: 84px;
+    height: 84px;
   }
 
   .hero-avatar span {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 
   .hero-avatar-ring {
@@ -1962,37 +2079,39 @@ a.contact-card:hover {
   }
 
   .hero-avatar-glow {
-    inset: -10px;
+    inset: -8px;
   }
 
   .hero-greeting {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     letter-spacing: 2px;
+    margin-bottom: 4px;
   }
 
   .hero-badge {
-    font-size: 0.7rem;
-    padding: 4px 12px;
+    font-size: 0.68rem;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+    gap: 5px;
   }
 
   .hero-stats {
-    gap: 10px;
-    margin-top: 28px;
+    gap: 8px;
+    margin-top: 20px;
   }
 
   .hero-stats .stat-item {
-    flex: 1 1 calc(50% - 10px);
-    min-width: 100px;
-    padding: 10px 12px;
+    flex: 1 1 calc(50% - 8px);
+    min-width: auto;
+    padding: 12px 12px;
   }
 
   .hero-stats .stat-number {
-    font-size: 1.2rem;
+    font-size: 1.15rem;
   }
 
   .hero-stats .stat-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.5px;
+    font-size: 0.62rem;
   }
 
   .scroll-top {
@@ -2211,51 +2330,73 @@ a.contact-card:hover {
   }
 
   .hero {
-    padding: calc(var(--nav-height) + 16px) 14px 50px;
+    padding: calc(var(--nav-height) + 14px) 14px 44px;
+  }
+
+  .hero-inner {
+    gap: 18px;
   }
 
   .hero h1 {
-    font-size: clamp(1.2rem, 6vw, 1.5rem);
-    margin-bottom: 10px;
+    font-size: 1.25rem;
+    margin-bottom: 8px;
   }
 
   .hero-greeting {
-    font-size: 0.75rem;
+    font-size: 0.72rem;
+    margin-bottom: 4px;
   }
 
   .hero-badge {
-    font-size: 0.65rem;
-    padding: 3px 10px;
-    margin-bottom: 14px;
+    font-size: 0.62rem;
+    padding: 3px 8px;
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+
+  .badge-dot {
+    width: 4px;
+    height: 4px;
   }
 
   .hero-title {
-    font-size: 0.85rem;
-    margin-bottom: 12px;
+    font-size: 0.8rem;
+    margin-bottom: 8px;
   }
 
   .hero-location {
-    font-size: 0.8rem;
-    margin-bottom: 20px;
+    font-size: 0.76rem;
+    margin-bottom: 18px;
   }
 
   .hero-btn {
-    padding: 10px 16px;
+    padding: 12px 16px;
     font-size: 0.8rem;
+    min-height: 44px;
+  }
+
+  .hero-btn-social {
+    padding: 10px 14px;
+    font-size: 0.78rem;
+    min-height: 42px;
+  }
+
+  .hero-btn-social i {
+    font-size: 1rem;
   }
 
   .hero-avatar-wrap {
-    width: 100px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
   }
 
   .hero-avatar {
-    width: 80px;
-    height: 80px;
+    width: 74px;
+    height: 74px;
   }
 
   .hero-avatar span {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
   }
 
   .hero-avatar-ring {
@@ -2264,18 +2405,18 @@ a.contact-card:hover {
   }
 
   .hero-avatar-glow {
-    inset: -8px;
+    display: none;
   }
 
   .hero-stats {
-    gap: 8px;
-    margin-top: 24px;
+    gap: 6px;
+    margin-top: 18px;
   }
 
   .hero-stats .stat-item {
     flex: 1 1 100%;
     min-width: auto;
-    padding: 8px 12px;
+    padding: 10px 14px;
   }
 
   .hero-stats .stat-number {
@@ -2284,6 +2425,11 @@ a.contact-card:hover {
 
   .hero-stats .stat-label {
     font-size: 0.6rem;
+  }
+
+  .hero-social {
+    gap: 6px;
+    margin-top: 14px;
   }
 
   .section {
@@ -2409,23 +2555,30 @@ a.contact-card:hover {
   }
 
   .hero {
-    padding: calc(var(--nav-height) + 12px) 10px 40px;
+    padding: calc(var(--nav-height) + 10px) 10px 36px;
+  }
+
+  .hero-inner {
+    gap: 14px;
   }
 
   .hero h1 {
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     letter-spacing: -0.5px;
+    margin-bottom: 6px;
   }
 
   .hero-greeting {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     letter-spacing: 1.5px;
+    margin-bottom: 2px;
   }
 
   .hero-badge {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     padding: 2px 8px;
     gap: 4px;
+    margin-bottom: 8px;
   }
 
   .badge-dot {
@@ -2434,33 +2587,48 @@ a.contact-card:hover {
   }
 
   .hero-title {
-    font-size: 0.78rem;
+    font-size: 0.75rem;
+    margin-bottom: 6px;
   }
 
   .hero-location {
-    font-size: 0.75rem;
-    margin-bottom: 16px;
+    font-size: 0.7rem;
+    margin-bottom: 14px;
+  }
+
+  .hero-cta {
+    gap: 6px;
   }
 
   .hero-btn {
-    padding: 8px 14px;
+    padding: 10px 12px;
     font-size: 0.75rem;
     min-height: 40px;
     gap: 6px;
   }
 
+  .hero-btn-social {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+    min-height: 38px;
+  }
+
+  .hero-btn-social i {
+    font-size: 0.9rem;
+  }
+
   .hero-avatar-wrap {
-    width: 85px;
-    height: 85px;
+    width: 78px;
+    height: 78px;
   }
 
   .hero-avatar {
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
   }
 
   .hero-avatar span {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 
   .hero-avatar-ring {
@@ -2473,15 +2641,24 @@ a.contact-card:hover {
 
   .hero-stats {
     gap: 6px;
-    margin-top: 20px;
+    margin-top: 16px;
   }
 
   .hero-stats .stat-item {
-    padding: 6px 10px;
+    padding: 10px 10px;
   }
 
   .hero-stats .stat-number {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-stats .stat-label {
+    font-size: 0.58rem;
+  }
+
+  .hero-social {
+    gap: 6px;
+    margin-top: 12px;
   }
 
   .section {
