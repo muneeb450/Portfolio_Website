@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Muneeb Akbar | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="spotlight" id="spotlight" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursor-glow" aria-hidden="true"></div>
+
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+    <canvas id="particles-canvas"></canvas>
+  </div>
+
+  <div class="holographic-grid" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Home">
+        <span class="logo-text">Muneeb</span>
+        <span class="logo-dot"></span>
+      </a>
+      <ul class="nav-menu" id="nav-menu" role="menubar">
+        <li role="none"><a href="#about" class="nav-link" role="menuitem">About</a></li>
+        <li role="none"><a href="#education" class="nav-link" role="menuitem">Education</a></li>
+        <li role="none"><a href="#skills" class="nav-link" role="menuitem">Skills</a></li>
+        <li role="none"><a href="#experience" class="nav-link" role="menuitem">Experience</a></li>
+        <li role="none"><a href="#projects" class="nav-link" role="menuitem">Projects</a></li>
+        <li role="none"><a href="#contact" class="nav-link" role="menuitem">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#contact" class="hire-me-btn magnetic-btn" aria-label="Hire Me">
+          <span class="btn-content"><i class="fas fa-rocket" aria-hidden="true"></i> Hire Me</span>
+        </a>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-badge hero-reveal">
+            <span class="badge-dot"></span>
+            Available for Internships
+          </div>
+          <p class="hero-greeting hero-reveal">Hello, I'm</p>
+          <h1 class="hero-reveal">
+            <span class="text-gradient">Muhammad Muneeb Akbar</span>
+          </h1>
+          <p class="hero-title hero-reveal">
+            <span class="typing-text"></span><span class="cursor"></span>
+          </p>
+          <p class="hero-location hero-reveal">
+            <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Karachi, Pakistan
+          </p>
+          <div class="hero-cta hero-reveal">
+            <a href="#contact" class="hero-btn hero-btn-primary magnetic-btn">
+              <span class="btn-content"><i class="fas fa-rocket" aria-hidden="true"></i> Hire Me</span>
+            </a>
+            <a href="mailto:mnbakber@gmail.com" class="hero-btn hero-btn-secondary magnetic-btn">
+              <span class="btn-content"><i class="fas fa-envelope" aria-hidden="true"></i> Email Me</span>
+            </a>
+            <a href="#" class="hero-btn hero-btn-secondary magnetic-btn" aria-label="LinkedIn">
+              <span class="btn-content"><i class="fab fa-linkedin-in"></i></span>
+            </a>
+            <a href="#" class="hero-btn hero-btn-secondary magnetic-btn" aria-label="GitHub">
+              <span class="btn-content"><i class="fab fa-github"></i></span>
+            </a>
+          </div>
+        </div>
+        <div class="hero-visual hero-reveal">
+          <div class="hero-avatar-wrap">
+            <div class="hero-avatar-ring"></div>
+            <div class="hero-avatar-glow"></div>
+            <div class="hero-avatar">
+              <span aria-hidden="true">MA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item reveal-item">
+          <span class="stat-number" data-count="8" data-suffix="th">0</span>
+          <span class="stat-label">Semester</span>
+        </div>
+        <div class="stat-item reveal-item">
+          <span class="stat-number" data-count="3" data-suffix="+">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+        <div class="stat-item reveal-item">
+          <span class="stat-number stat-static stat-gradient">IELTS 6.5</span>
+          <span class="stat-label">English Proficiency</span>
+        </div>
+      </div>
+      <div class="hero-scroll-indicator" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <section id="about" class="section reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">About Me</h2>
+        <div class="about-content">
+          <div class="about-text reveal-item">
+            <p>Final-year BS Computer Science student with hands-on experience in system administration and a growing specialization in <strong>Agentic AI</strong>, OpenAI frameworks, and Python-based data science. Internationally recognized English proficiency (IELTS 6.5 | PTE 66).</p>
+            <p>Seeking a software, AI, data, or IT internship to apply academic knowledge and deliver immediate value to a high-performing team.</p>
+          </div>
+          <div class="about-stats">
+            <div class="stat-item reveal-item">
+              <span class="stat-number" data-count="8" data-suffix="th">0</span>
+              <span class="stat-label">Semester</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-number" data-count="3" data-suffix="+">0</span>
+              <span class="stat-label">Certifications</span>
+            </div>
+            <div class="stat-item reveal-item">
+              <span class="stat-number stat-static">IELTS 6.5</span>
+              <span class="stat-label">English Proficiency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section section-alt reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Education</h2>
+        <div class="timeline" data-timeline>
+          <div class="timeline-progress" aria-hidden="true"></div>
+          <div class="timeline-item">
+            <div class="timeline-icon" aria-hidden="true"><i class="fas fa-graduation-cap"></i></div>
+            <div class="timeline-content">
+              <span class="timeline-tag">Present</span>
+              <h3>Bachelor of Science in Computer Science</h3>
+              <p class="timeline-meta">Indus University, Karachi &mdash; 2022 &ndash; Present</p>
+              <p class="timeline-desc">8th Semester &bull; Focus on AI, Data Science &amp; Software Engineering</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon" aria-hidden="true"><i class="fas fa-school"></i></div>
+            <div class="timeline-content">
+              <h3>A-Levels</h3>
+              <p class="timeline-meta">The Avicenna School, Karachi</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-icon" aria-hidden="true"><i class="fas fa-school"></i></div>
+            <div class="timeline-content">
+              <h3>O-Levels</h3>
+              <p class="timeline-meta">Karachi Public School, Karachi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Skills &amp; Competencies</h2>
+        <div class="skills-grid">
+          <div class="skill-category tilt-card">
+            <h3><i class="fas fa-code skill-icon" aria-hidden="true"></i> Technical Skills</h3>
+            <ul class="skill-list">
+              <li>
+                <span class="skill-name">Agentic AI Development</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Python Programming</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Data Science (Pandas, NumPy, Power BI)</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">System Administration</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">HTML / CSS &amp; JavaScript</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="65"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">IT Infrastructure &amp; Networking</span>
+                <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
+              </li>
+            </ul>
+          </div>
+          <div class="skill-category tilt-card">
+            <h3><i class="fas fa-users skill-icon" aria-hidden="true"></i> Core Competencies</h3>
+            <ul class="skill-list competencies">
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Strong Problem Solving</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Time Management</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Cross-functional Collaboration</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Verbal &amp; Written Communication</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Process &amp; Operational Thinking</li>
+              <li><i class="fas fa-check-circle" aria-hidden="true"></i> Fast Learner &amp; Self-Motivated</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skills-marquee reveal-item" aria-label="Technologies">
+          <div class="marquee-track">
+            <div class="marquee-content">
+              <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+              <span class="marquee-item"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="marquee-item"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="marquee-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="marquee-item"><i class="fas fa-robot"></i> OpenAI</span>
+              <span class="marquee-item"><i class="fas fa-chart-bar"></i> Power BI</span>
+              <span class="marquee-item"><i class="fas fa-database"></i> Pandas</span>
+              <span class="marquee-item"><i class="fas fa-network-wired"></i> Networking</span>
+              <span class="marquee-item"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="marquee-item"><i class="fas fa-server"></i> SysAdmin</span>
+            </div>
+            <div class="marquee-content" aria-hidden="true">
+              <span class="marquee-item"><i class="fab fa-python"></i> Python</span>
+              <span class="marquee-item"><i class="fab fa-js"></i> JavaScript</span>
+              <span class="marquee-item"><i class="fab fa-html5"></i> HTML5</span>
+              <span class="marquee-item"><i class="fab fa-css3-alt"></i> CSS3</span>
+              <span class="marquee-item"><i class="fas fa-robot"></i> OpenAI</span>
+              <span class="marquee-item"><i class="fas fa-chart-bar"></i> Power BI</span>
+              <span class="marquee-item"><i class="fas fa-database"></i> Pandas</span>
+              <span class="marquee-item"><i class="fas fa-network-wired"></i> Networking</span>
+              <span class="marquee-item"><i class="fab fa-git-alt"></i> Git</span>
+              <span class="marquee-item"><i class="fas fa-server"></i> SysAdmin</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="section section-alt reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Experience</h2>
+        <div class="timeline" data-timeline>
+          <div class="timeline-progress" aria-hidden="true"></div>
+          <div class="timeline-item">
+            <div class="timeline-icon" aria-hidden="true"><i class="fas fa-briefcase"></i></div>
+            <div class="timeline-content">
+              <span class="timeline-tag">Internship</span>
+              <h3>System Administrator Intern</h3>
+              <p class="timeline-meta">Air Craft Aviation Services, Karachi &mdash; Jun 2025 &ndash; Sep 2025</p>
+              <ul class="experience-details">
+                <li>Maintained records of system operations, server performance logs, security reports, and IT infrastructure documentation ensuring audit-ready data integrity.</li>
+                <li>Coordinated technical workflows between IT teams, network engineers, and support staff; served as a communication bridge between system operations and business departments.</li>
+                <li>Monitored system performance, identified operational issues, and suggested improvements to enhance system efficiency, reliability, and overall IT operations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Certifications</h2>
+        <div class="cert-grid">
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Python for Data Science, AI &amp; Development</h3>
+            <p>Coursera &bull; Feb 2026</p>
+          </div>
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>AI and Data Science Specialisation</h3>
+            <p>Apr 2025 &ndash; Present</p>
+          </div>
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Agentic AI Development</h3>
+            <p>Currently Enrolled &bull; 2026</p>
+          </div>
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Certified Mobile Web Developer</h3>
+            <p>AXIOM &bull; May &ndash; Nov 2020</p>
+          </div>
+          <div class="cert-card tilt-card">
+            <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+            <h3>Microsoft Office Specialist</h3>
+            <p>Infra &bull; Completed</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-alt reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Projects</h2>
+        <p class="section-subtitle reveal-item">Projects I've built and contributed to</p>
+        <div class="projects-grid">
+          <article class="project-card">
+            <div class="project-visual" data-parallax>
+              <div class="project-visual-inner">
+                <i class="fas fa-robot"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>AI Agent System</h3>
+              <p>Autonomous AI agent built with OpenAI frameworks for task automation and decision-making.</p>
+              <div class="project-tags">
+                <span>Python</span>
+                <span>OpenAI</span>
+                <span>AI</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link magnetic-btn" aria-label="View on GitHub"><i class="fab fa-github"></i> Code</a>
+                <a href="#" class="project-link magnetic-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual" data-parallax>
+              <div class="project-visual-inner">
+                <i class="fas fa-chart-line"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Data Analysis Dashboard</h3>
+              <p>Interactive dashboard for data visualization and analysis using Python data science stack.</p>
+              <div class="project-tags">
+                <span>Pandas</span>
+                <span>Power BI</span>
+                <span>Python</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link magnetic-btn" aria-label="View on GitHub"><i class="fab fa-github"></i> Code</a>
+                <a href="#" class="project-link magnetic-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-visual" data-parallax>
+              <div class="project-visual-inner">
+                <i class="fas fa-globe"></i>
+              </div>
+            </div>
+            <div class="project-body">
+              <h3>Portfolio Website</h3>
+              <p>Personal portfolio built with HTML, CSS, and JavaScript featuring modern UI/UX design.</p>
+              <div class="project-tags">
+                <span>HTML/CSS</span>
+                <span>JavaScript</span>
+                <span>UI/UX</span>
+              </div>
+              <div class="project-links">
+                <a href="#" class="project-link magnetic-btn" aria-label="View on GitHub"><i class="fab fa-github"></i> Code</a>
+                <a href="#" class="project-link magnetic-btn" aria-label="Live Demo"><i class="fas fa-external-link-alt"></i> Demo</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section reveal-section">
+      <div class="container">
+        <h2 class="section-title reveal-item">Get In Touch</h2>
+        <p class="section-subtitle reveal-item">I'm currently looking for internship opportunities. Let's connect!</p>
+        <div class="contact-grid">
+          <a href="mailto:mnbakber@gmail.com" class="contact-card">
+            <i class="fas fa-envelope"></i>
+            <h3>Email</h3>
+            <p>mnbakber@gmail.com</p>
+          </a>
+          <a href="tel:+923302480817" class="contact-card">
+            <i class="fas fa-phone"></i>
+            <h3>Phone</h3>
+            <p>+92 330 2480817</p>
+          </a>
+          <div class="contact-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <h3>Location</h3>
+            <p>Karachi, Pakistan</p>
+          </div>
+          <a href="#" class="contact-card">
+            <i class="fab fa-linkedin-in"></i>
+            <h3>LinkedIn</h3>
+            <p>Connect with me</p>
+          </a>
+          <a href="#" class="contact-card">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>View my repos</p>
+          </a>
+        </div>
+
+        <form class="contact-form" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="form-group reveal-item">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+            </div>
+            <div class="form-group reveal-item">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@email.com">
+            </div>
+          </div>
+          <div class="form-group reveal-item">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="Internship inquiry">
+          </div>
+          <div class="form-group reveal-item">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me about the opportunity..."></textarea>
+          </div>
+          <button type="submit" class="hero-btn hero-btn-primary magnetic-btn form-submit reveal-item">
+            <span class="btn-content"><i class="fas fa-paper-plane" aria-hidden="true"></i> Send Message</span>
+          </button>
+          <div class="form-success" id="form-success" role="status" aria-live="polite" hidden>
+            <i class="fas fa-check-circle"></i>
+            <p>Message sent successfully! I'll get back to you soon.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <button class="scroll-top magnetic-btn" id="scrollTop" aria-label="Scroll to top">
+    <span class="btn-content"><i class="fas fa-arrow-up"></i></span>
+  </button>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2026 Muhammad Muneeb Akbar. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="mailto:mnbakber@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/three-animations.js"></script>
+</body>
+</html>
