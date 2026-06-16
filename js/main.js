@@ -200,25 +200,17 @@
       btn.addEventListener('click', function (e) {
         const rect = btn.getBoundingClientRect();
         const ripple = document.createElement('span');
-        ripple.className = 'ripple-effect';
-        const size = Math.max(rect.width, rect.height);
-        ripple.style.cssText = `
-          position:absolute;width:${size}px;height:${size}px;
-          left:${e.clientX - rect.left - size / 2}px;
-          top:${e.clientY - rect.top - size / 2}px;
-          border-radius:50%;background:rgba(255,255,255,0.35);
-          transform:scale(0);animation:ripple-expand 0.6s ease-out forwards;
-          pointer-events:none;z-index:3;
-        `;
+        ripple.className = 'ripple';
+        const size = Math.max(rect.width, rect.height) * 0.6;
+        ripple.style.width = ripple.style.height = `${size}px`;
+        ripple.style.left = `${e.clientX - rect.left}px`;
+        ripple.style.top = `${e.clientY - rect.top}px`;
         btn.appendChild(ripple);
         setTimeout(() => ripple.remove(), 600);
       });
     });
   }
 
-  const rippleStyle = document.createElement('style');
-  rippleStyle.textContent = '@keyframes ripple-expand{to{transform:scale(2.5);opacity:0;}}';
-  document.head.appendChild(rippleStyle);
   initMagneticButtons();
 
   /* ===== 3D Tilt Cards ===== */

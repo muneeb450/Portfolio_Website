@@ -117,7 +117,8 @@ a {
   background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
   top: -10%;
   left: -5%;
-  animation: blob-float-1 18s ease-in-out infinite;
+  animation: blob-morph-1 20s ease-in-out infinite;
+  filter: blur(80px) saturate(1.2);
 }
 
 .blob-2 {
@@ -126,7 +127,8 @@ a {
   background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
   bottom: 10%;
   right: -5%;
-  animation: blob-float-2 22s ease-in-out infinite;
+  animation: blob-morph-2 25s ease-in-out infinite;
+  filter: blur(80px) saturate(1.2);
 }
 
 .blob-3 {
@@ -135,23 +137,32 @@ a {
   background: radial-gradient(circle, rgba(108, 99, 255, 0.6) 0%, transparent 70%);
   top: 40%;
   left: 50%;
-  animation: blob-float-3 20s ease-in-out infinite;
+  animation: blob-morph-3 22s ease-in-out infinite;
+  filter: blur(80px) saturate(1.2);
 }
 
-@keyframes blob-float-1 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(40px, 30px) scale(1.05); }
-  66% { transform: translate(-20px, 50px) scale(0.95); }
+@keyframes blob-morph-1 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 50%; }
+  25% { transform: translate(50px, -30px) scale(1.12) rotate(90deg); border-radius: 42% 58% 55% 45%; }
+  50% { transform: translate(-30px, 40px) scale(0.92) rotate(180deg); border-radius: 48% 52% 45% 55%; }
+  75% { transform: translate(20px, -50px) scale(1.06) rotate(270deg); border-radius: 55% 45% 48% 52%; }
+  100% { transform: translate(0, 0) scale(1) rotate(360deg); border-radius: 50%; }
 }
 
-@keyframes blob-float-2 {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-50px, -30px) scale(1.08); }
+@keyframes blob-morph-2 {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); border-radius: 50%; }
+  25% { transform: translate(-40px, 40px) scale(1.08) rotate(-90deg); border-radius: 55% 45% 58% 42%; }
+  50% { transform: translate(50px, -20px) scale(0.95) rotate(-180deg); border-radius: 45% 55% 42% 58%; }
+  75% { transform: translate(-30px, -30px) scale(1.1) rotate(-270deg); border-radius: 52% 48% 55% 45%; }
+  100% { transform: translate(0, 0) scale(1) rotate(-360deg); border-radius: 50%; }
 }
 
-@keyframes blob-float-3 {
-  0%, 100% { transform: translate(-50%, 0) scale(1); }
-  50% { transform: translate(-50%, -40px) scale(1.1); }
+@keyframes blob-morph-3 {
+  0% { transform: translate(-50%, 0) scale(1) rotate(0deg); border-radius: 50%; }
+  25% { transform: translate(-50%, -50px) scale(1.15) rotate(120deg); border-radius: 40% 60% 50% 50%; }
+  50% { transform: translate(-50%, 30px) scale(0.9) rotate(240deg); border-radius: 60% 40% 45% 55%; }
+  75% { transform: translate(-50%, -20px) scale(1.05) rotate(120deg); border-radius: 50% 50% 60% 40%; }
+  100% { transform: translate(-50%, 0) scale(1) rotate(360deg); border-radius: 50%; }
 }
 
 /* ===== Holographic Grid Overlay ===== */
@@ -253,6 +264,22 @@ body.cursor-active .cursor-glow {
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(108, 99, 255, 0.3), transparent);
   pointer-events: none;
+}
+
+.navbar-glass-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 30%, rgba(255, 255, 255, 0.03) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: glass-shimmer 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes glass-shimmer {
+  0% { background-position: 200% 0; }
+  50% { background-position: -50% 0; }
+  100% { background-position: 200% 0; }
 }
 
 .navbar.scrolled {
@@ -940,24 +967,27 @@ body.cursor-active .cursor-glow {
   transition: opacity var(--transition);
 }
 
-.magnetic-btn::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.3);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 1;
-}
-
 .magnetic-btn .btn-content {
   position: relative;
   z-index: 2;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+}
+
+/* ===== Ripple Effect ===== */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%) scale(0);
+  animation: ripple-anim 0.6s ease-out forwards;
+  pointer-events: none;
+  z-index: 3;
+}
+
+@keyframes ripple-anim {
+  to { transform: translate(-50%, -50%) scale(4); opacity: 0; }
 }
 
 main {
